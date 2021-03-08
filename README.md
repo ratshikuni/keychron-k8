@@ -3,7 +3,7 @@
 This is partial and may or may not be completed.
 Use this information at your own discretion and risk.
 
-This is for K8 RGB v1. 
+This is for K8 RGB v1 ANSI. 
 
 # Keychron K8
 
@@ -11,13 +11,15 @@ This fork is intended to bring QMK to the Keychron K8.
 
 **Progress:**
 - QMK custom keymaps are working properly
-- RGB does not work, have it completely disabled for now
+- RGB does not work, have it completely disabled for now due to flickering
+- Bluetooth does not work, currently waiting for QMK to release an official Bluetooth API
+- VIA does not work, will softbrick your keyboard
 
 **Setup repo + dependencies**
 1. Clone this repository: https://github.com/SonixQMK/qmk_firmware
 2. `git submodule add https://github.com/SonixQMK/ChibiOS-Contrib.git`
 3. `make git-submodule`
-4. Copy keyboards/keychron/k8/ over to your qmk_firmware directory
+4. Copy keyboards/keychron/k8/ from this repository over to your qmk_firmware directory
 5. You should be able to compile now
 
 **Instructions on how to flash QMK to the K8:**
