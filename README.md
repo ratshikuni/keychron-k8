@@ -3,15 +3,16 @@
 This is partial and may or may not be completed.
 Use this information at your own discretion and risk.
 
-This is for K8 RGB v1. 
+This is for the K8 RGB v1. 
 
 # Keychron K8
 
 This fork is intended to bring QMK to the Keychron K8.
 
 **Progress:**
-- QMK custom keymaps are working properly
+- QMK custom keymaps are fully functional
 - RGB does not work, have it completely disabled for now
+- Bluetooth does not work
 
 **Setup repo + dependencies**
 1. Clone this repository: https://github.com/SonixQMK/qmk_firmware
