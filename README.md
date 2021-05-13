@@ -41,8 +41,9 @@ This fork is intended to bring QMK to the Keychron K8.
 - [x] Ability to revert to factory firmware
 - [x] Confirm Chibios functionality
 - [x] Get QMK Working
-- [ ] Get LEDs working (currently very buggy, lots of flickering)
-- [ ] Confirm bluetooth functionality
+- [x] Get RGB working
+- [ ] Get VIA working (currently no EEPROM support, which is required for VIA)
+- [ ] Bluetooth functionality (currently waiting on official Bluetooth support from QMK)
 
 ## Chips
 * Main MCU - HFD2201KBA - appears to be based on/clone of [SONIX SN32F24xB](http://www.sonix.com.tw/article-tw-4315-30347)
