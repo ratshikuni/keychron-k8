@@ -1,10 +1,8 @@
 # Keychron K8 Reverse Engineering
 
-This is partial and may or may not be completed.
-Use this information at your own discretion and risk.
+This is an unofficial firmware, please use at your own discretion.
 
-This is for K8 RGB v1 ANSI. 
-
+This is for K8 RGB v1 ANSI.
 
 # Keychron K8
 
@@ -14,7 +12,7 @@ This fork is intended to bring QMK to the Keychron K8.
 - QMK custom keymaps are working properly
 - RGB works properly, no more flickering
 - Bluetooth does not work, currently waiting for QMK to release an official Bluetooth API
-- VIA does not work, will softbrick your keyboard
+- VIA does not work, currently no EEPROM support
 
 **Setup repo + dependencies**
 1. Clone this repository: https://github.com/SonixQMK/qmk_firmware
