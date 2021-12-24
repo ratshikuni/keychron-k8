@@ -13,6 +13,8 @@ This is for K8 RGB v1 ANSI.
 ___
 This fork is intended to bring QMK to the Keychron K8.
 
+If you have never touched QMK before: https://beta.docs.qmk.fm/tutorial/newbs_getting_started
+
 **Progress:**
 - QMK custom keymaps are working properly
 - RGB works properly, no more flickering
@@ -20,7 +22,6 @@ This fork is intended to bring QMK to the Keychron K8.
 - VIA does not work, currently no EEPROM support
 
 **Setup repo + dependencies**
-0. If you have never touched QMK before: https://beta.docs.qmk.fm/tutorial/newbs_getting_started
 1. Clone this repository: https://github.com/SonixQMK/qmk_firmware
 2. `git submodule add https://github.com/SonixQMK/ChibiOS-Contrib.git`
 3. `make git-submodule`
