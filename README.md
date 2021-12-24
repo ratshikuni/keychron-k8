@@ -13,6 +13,8 @@ This is for K8 RGB v1 ANSI.
 ___
 This fork is intended to bring QMK to the Keychron K8.
 
+If you have never touched QMK before: https://beta.docs.qmk.fm/tutorial/newbs_getting_started
+
 **Progress:**
 - QMK custom keymaps are working properly
 - RGB works properly, no more flickering
@@ -20,11 +22,12 @@ This fork is intended to bring QMK to the Keychron K8.
 - VIA does not work, currently no EEPROM support
 
 **Setup repo + dependencies**
-0. If you have never touched QMK before: https://beta.docs.qmk.fm/tutorial/newbs_getting_started
 1. Clone this repository: https://github.com/SonixQMK/qmk_firmware
-2. `git submodule add https://github.com/SonixQMK/ChibiOS-Contrib.git`
-3. `make git-submodule`
-5. You should be able to compile now (`make keychron/k8:ansi`) in QMK_MSYS terminal)
+2. In the root of the `qmk_firmware`  directory, run these commands:
+   - `git submodule add https://github.com/SonixQMK/ChibiOS-Contrib.git`
+   - `make git-submodule`
+3. You should be able to compile firmwares now:
+   - Open QMK_MSYS, cd to the qmk_firmware directory root, then run `make keychron/k8:ansi`
 
 **Instructions on how to flash QMK to the K8:**
 1. Customize your keymap and compile your firmware
