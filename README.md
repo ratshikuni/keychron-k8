@@ -6,6 +6,9 @@ This is for K8 RGB v1 ANSI.
 
 # Keychron K8
 
+## NOTE: This repository is currently outdated. Please see the [SonixQMK repository](https://github.com/SonixQMK/qmk_firmware) for the latest updates for Keychron keyboard firmwares.
+
+___
 This fork is intended to bring QMK to the Keychron K8.
 
 **Progress:**
