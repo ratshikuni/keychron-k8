@@ -1,5 +1,4 @@
-/* Copyright 2020 Adam Honse <calcprogrammer1@gmail.com> 
- * Copyright 2020 Dimitris Mantzouranis <d3xter93@gmail.com>
+/* Copyright 2021 Harrison Chan (Xelus)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,33 +15,3 @@
  */
 
 #pragma once
-
-#include "config_common.h"
-
-/* USB Device descriptor parameter */
-#define VENDOR_ID       0x05AC
-#define PRODUCT_ID      0x024F
-#define DEVICE_VER      0x0001
-
-#define MANUFACTURER    Keychron
-#define PRODUCT         K8
-#define DESCRIPTION     K8 RGB Hotswap
-
-/* key matrix size */
-#define MATRIX_ROWS 6
-#define MATRIX_COLS 17
-
-#define DIODE_DIRECTION COL2ROW
-
-#define MATRIX_COL_PINS { A8, A9, A10, A11, A12, A13, A14, A15, B0, B1, B2, B3, B4, B5, B6, B7, B8 }
-#define MATRIX_ROW_PINS { C15, D11, D10, D9, D8, D7 }
-
-// Connects each switch in the dip switch to the GPIO pin of the MCU
-#define DIP_SWITCH_PINS { D5, D6 }
-
-/* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
-#define DEBOUNCE 0
-
-//#define FORCE_NKRO
-
-#include "config_led.h"

@@ -1,19 +1,17 @@
 # Keychron K8 Reverse Engineering
 
-This is an unofficial firmware, please use at your own discretion.
-
-This is for K8 RGB v1 ANSI.
+These are unofficial firmwares, please use at your own discretion.
 
 # Keychron K8
 
-### NOTE: This code in this repository is currently outdated. Please see the [SonixQMK repository](https://github.com/SonixQMK/qmk_firmware) for the latest Keychron firmwares.
+### NOTE: This code in this repository may be outdated. Please see the [SonixQMK repository](https://github.com/SonixQMK/qmk_firmware) for the latest Keychron firmwares.
 
-### [Direct link to all Keychron firmwares folder here](https://github.com/SonixQMK/qmk_firmware/tree/sn32/keyboards/keychron)
+### [Direct link to all Keychron firmwares folder here](https://github.com/SonixQMK/qmk_firmware/tree/sn32_master/keyboards/keychron)
 
 ___
-This fork is intended to bring QMK to the Keychron K8.
+This fork brings QMK to the Keychron K8.
 
-If you have never touched QMK before: https://beta.docs.qmk.fm/tutorial/newbs_getting_started
+If you have never touched QMK before: https://docs.qmk.fm/#/newbs. Make sure you have QMK MSYS set up.
 
 **Progress:**
 - QMK custom keymaps are working properly
@@ -22,18 +20,21 @@ If you have never touched QMK before: https://beta.docs.qmk.fm/tutorial/newbs_ge
 - VIA does not work, currently no EEPROM support
 
 **Setup repo + dependencies**
-1. Clone this repository: https://github.com/SonixQMK/qmk_firmware
-2. In the root of the `qmk_firmware`  directory, run these commands:
+1. Clone this repository: https://github.com/SonixQMK/qmk_firmware, and make sure you are on the sn32_master branch
+2. In the root of the `qmk_firmware` directory, run these commands:
    - `git submodule add https://github.com/SonixQMK/ChibiOS-Contrib.git`
    - `make git-submodule`
+   - `util/qmk_install.sh`
 3. You should be able to compile firmwares now:
-   - Open QMK_MSYS, cd to the qmk_firmware directory root, then run `make keychron/k8:ansi`
+   - Open QMK_MSYS, cd to the qmk_firmware directory root, then run these commands:
+      - `qmk setup` (if you haven't already)
+      - `make keychron/k8/rgb/ansi:default`
 
 **Instructions on how to flash QMK to the K8:**
 1. Customize your keymap and compile your firmware
-   - Keymaps can be found under `keyboards/keychron/k8`
+   - Keymaps can be found under `keyboards/keychron/k8/keymaps`
    - For example, if you want a firmware for the Keychron K8 ANSI, edit the `keymap.c` under `keyboards/keychron/k8/keymaps/ansi`
-   - Then run `make keychron/k8:ansi` in QMK_MSYS
+   - Then run `make keychron/k8/rgb/ansi:ansi` in QMK_MSYS
 2. Download this flashing tool and run it: https://github.com/qmk/qmk_firmware/files/5862715/SONiX_USB_MCU_ISP_Tool_V2.3.1.7-.zip
 3. Click 'Load File' and select `SN32F24xB` on the right, then choose your *.hex QMK firmware file
 4. VID - `0C45`, PID - `7040`
