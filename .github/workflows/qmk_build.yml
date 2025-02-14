@@ -17,7 +17,7 @@ jobs:
           keyboard: "keychron/k8/v1" # Check correct pathing!
           keymap: "homerow" # Check correct pathing!
       - name: Upload Firmware Artifact
-        uses: actions/upload-artifact@v3.1.2
+        uses: actions/upload-artifact@v4
         with:
           name: firmware
           path: build  # Check correct pathing!
