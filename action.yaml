@@ -4,11 +4,11 @@ inputs:
   keymap-path:
     description: "Path to Your keymap folder, must be same as qmk_firmware path"
     required: true
-    default: "keyboards/idobao/id75/keymaps/justgook"
+    default: "keyboards/keychron/k8/keymaps/homerow"
   keyboard:
     description: "Keyboard name"
     required: true
-    default: "idobao/id75/v1"
+    default: "keychron/k8/v1"
   keymap:
     description: "Keymap name, must match `keymap-path` folder"
     required: true
