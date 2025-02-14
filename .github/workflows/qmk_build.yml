@@ -1,9 +1,11 @@
 name: Qmk Firmware Compiler/Builder
 
 on:
+  pull_request:
   push:
     branches:
       - main
+      - 'releases/*'
 
 jobs:
   build_firmware:  # Added a job name
