@@ -1,2 +1,52 @@
-.idea/
+# Compiled firmware files
+*.hex
+*.bin
+*.uf2
+*.eep
+
+# Build directories
 build/
+qmk_firmware/build/  # If you build within the QMK repo
+qmk_firmware/keychron_k8_homerow.hex  # Or any other specific build files
+
+# Temporary files and editor backups
+*~
+.#*
+*.swp
+*.swo
+.DS_Store  # macOS specific
+Thumbs.db   # Windows specific
+
+# QMK specific temporary files
+qmk_firmware/.cache/
+qmk_firmware/.qmk_config.json
+qmk_firmware/qmk_install.log
+
+# Logs (if you generate any)
+*.log
+
+# Sensitive information (NEVER commit these!)
+# config.h  # If it contains secrets or machine-specific info (consider a template instead)
+# my_secrets.json  # Example for any secret files
+
+# System files (generally not needed in repos)
+.bash_history
+.zsh_history
+
+# Virtual environment directories (if you use them)
+.venv/
+venv/
+
+# Package manager folders (e.g. npm)
+node_modules/
+
+# Other build artifacts (adjust as needed)
+*.o
+*.elf
+*.d
+
+# macOS system files
+.localized
+
+# Windows specific
+Desktop.ini

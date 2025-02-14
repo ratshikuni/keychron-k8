@@ -1,25 +1,45 @@
-name: Qmk Firmware Compiler/Builder
+name: QMK Firmware Compiler/Builder (SonixQMK)
 
 on:
-  pull_request:
   push:
     branches:
       - main
-      - 'releases/*'
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  build_firmware:  # Added a job name
-    runs-on: ubuntu-latest  # Added runs-on (choose the appropriate runner)
+  build:
+    runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3  # Updated checkout action
-      - name: Build Firmware
-        uses: ./  # Assuming your action is in the root of the repo
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
         with:
-          keymap-path: "keyboards/keychron/k8/keymaps/homerow" # Check correct pathing!
-          keyboard: "keychron/k8/v1" # Check correct pathing!
-          keymap: "homerow" # Check correct pathing!
+          python-version: '3.9' # Or any version SonixQMK requires
+      - run: |
+          sudo apt-get update
+          sudo apt-get install -y gcc-avr avr-libc binutils-avr
+          python3 -m pip install qmk
+      - name: Clone SonixQMK Firmware
+        run: git clone --recursive https://github.com/SonixQMK/qmk_firmware.git
+      - name: Copy Custom Keymap
+        run: |
+          mkdir -p qmk_firmware/keyboards/keychron/k8/keymaps/homerow
+          cp keyboards/keychron/k8/keymaps/homerow/keymap.c qmk_firmware/keyboards/keychron/k8/keymaps/homerow/
+          cp keyboards/keychron/k8/rules.mk qmk_firmware/keyboards/keychron/k8/keymaps/homerow/ # If rules.mk exists
+          cp keyboards/keychron/k8/config.h qmk_firmware/keyboards/keychron/k8/keymaps/homerow/ # If config.h exists
+      - name: Compile Firmware
+        run: |
+          cd qmk_firmware
+          make keychron/k8:homerow  # Or the correct make command for SonixQMK
       - name: Upload Firmware Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
-          name: firmware
-          path: build  # Check correct pathing!
+          name: k8-firmware
+          path: qmk_firmware/keychron_k8_homerow.hex # Adjust path if needed
+      - name: Release (Optional)
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: qmk_firmware/keychron_k8_homerow.hex # Adjust path if needed
