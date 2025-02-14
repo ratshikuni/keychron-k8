@@ -27,8 +27,8 @@ jobs:
         run: |
           mkdir -p qmk_firmware/keyboards/keychron/k8/keymaps/homerow
           cp keyboards/keychron/k8/keymaps/homerow/keymap.c qmk_firmware/keyboards/keychron/k8/keymaps/homerow/
-          cp keyboards/keychron/k8/rules.mk qmk_firmware/keyboards/keychron/k8/keymaps/homerow/ # If rules.mk exists
           cp keyboards/keychron/k8/config.h qmk_firmware/keyboards/keychron/k8/keymaps/homerow/ # If config.h exists
+        # cp keyboards/keychron/k8/rules.mk qmk_firmware/keyboards/keychron/k8/keymaps/homerow/ # If rules.mk exists
       - name: Compile Firmware
         run: |
           cd qmk_firmware
