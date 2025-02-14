@@ -1,4 +1,3 @@
-
 name: Qmk Firmware Compiler/Builder
 
 on:
@@ -6,20 +5,19 @@ on:
     branches:
       - main
 
-
-steps:
-
-  - uses: actions/checkout@v1
-
-  - name: Build Firmware
-    uses: ./
-    with:
-      keymap-path: "keyboards/keychron/k8/keymaps/homerow"
-      keyboard: "keychron/k8/v1"
-      keymap: "homerow"
-
-  - name: Upload a Firmware
-    uses: actions/upload-artifact@v3.1.2
-    with:
-      name: firmware
-      path: build
+jobs:
+  build_firmware:  # Added a job name
+    runs-on: ubuntu-latest  # Added runs-on (choose the appropriate runner)
+    steps:
+      - uses: actions/checkout@v3  # Updated checkout action
+      - name: Build Firmware
+        uses: ./  # Assuming your action is in the root of the repo
+        with:
+          keymap-path: "keyboards/keychron/k8/keymaps/homerow" # Check correct pathing!
+          keyboard: "keychron/k8/v1" # Check correct pathing!
+          keymap: "homerow" # Check correct pathing!
+      - name: Upload Firmware Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: firmware
+          path: build  # Check correct pathing!
