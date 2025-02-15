@@ -28,10 +28,10 @@ jobs:
           pwd
           mkdir -p qmk_firmware/keyboards/keychron/k8/keymaps/homerow
           pwd
-          cp keyboards/keychron/k8/keymaps/homerow/keymap.c qmk_firmware/keyboards/keychron/k8/keymaps/homerow/
+          cp keyboards/keychron/k8/keymaps/homerow/keymap.c qmk_firmware/keyboards/keychron/k8/
           pwd
-          cp keyboards/keychron/k8/config.h qmk_firmware/keyboards/keychron/k8/keymaps/homerow/ # If config.h exists
-          cp keyboards/keychron/k8/rules.mk qmk_firmware/keyboards/keychron/k8/keymaps/homerow/ # If config.h exists
+          cp keyboards/keychron/k8/keymaps/homerow/config.h qmk_firmware/keyboards/keychron/k8/keymaps/homerow/ # If config.h exists
+          # cp keyboards/keychron/k8/keymaps/homerow/rules.mk qmk_firmware/keyboards/keychron/k8/keymaps/homerow/ # If config.h exists
           echo "Checking the qmk copied folder"
           cd qmk_firmware/keyboards/keychron/k8/keymaps/homerow/
           pwd
