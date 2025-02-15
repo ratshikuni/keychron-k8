@@ -26,20 +26,19 @@ jobs:
       - name: Copy Custom Keymap
         run: |
           pwd
-          ls
           mkdir -p qmk_firmware/keyboards/keychron/k8/keymaps/homerow
           pwd
-          ls
           cp keyboards/keychron/k8/keymaps/homerow/keymap.c qmk_firmware/keyboards/keychron/k8/keymaps/homerow/
           pwd
-          ls
           cp keyboards/keychron/k8/config.h qmk_firmware/keyboards/keychron/k8/keymaps/homerow/ # If config.h exists
-          
+          echo "Checking the qmk copied folder"
+          cd qmk_firmware/keyboards/keychron/k8/keymaps/homerow/
+          pwd
+          ls
+
       - name: Compile Firmware
         run: |
           cd qmk_firmware
-          pwd
-          ls
           make keychron/k8:homerow  # Or the correct make command for SonixQMK
       - name: Upload Firmware Artifact
         uses: actions/upload-artifact@v4
